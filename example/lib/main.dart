@@ -65,220 +65,220 @@ class _PhoneFieldDemoState extends State<PhoneFieldDemo> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Demo 1: Basic usage
-            // _buildSection(
-            //   'Basic Phone Input',
-            //   CustomPhoneField(
-            //     config: const PhoneFieldConfig(
-            //       initialCountryCode: 'US',
-            //       decoration: InputDecoration(
-            //         labelText: 'Phone Number',
-            //         border: OutlineInputBorder(),
-            //         hintText: 'Enter phone number',
-            //       ),
-            //     ),
-            //     onChanged: (phoneNumber) {
-            //       setState(() {
-            //         _phoneNumber = phoneNumber;
-            //         _validationError = PhoneField.manager.validatePhoneNumber(
-            //           phoneNumber.number,
-            //           phoneNumber.country,
-            //         );
-            //       });
-            //     },
-            //   ),
-            // ),
+            _buildSection(
+              'Basic Phone Input',
+              CustomPhoneField(
+                config: const PhoneFieldConfig(
+                  initialCountryCode: 'US',
+                  decoration: InputDecoration(
+                    labelText: 'Phone Number',
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter phone number',
+                  ),
+                ),
+                onChanged: (phoneNumber) {
+                  setState(() {
+                    _phoneNumber = phoneNumber;
+                    _validationError = PhoneField.manager.validatePhoneNumber(
+                      phoneNumber.number,
+                      phoneNumber.country,
+                    );
+                  });
+                },
+              ),
+            ),
 
-            // // Show current value
-            // if (_phoneNumber != null) ...[
-            //   const SizedBox(height: 8),
-            //   Card(
-            //     color: _validationError == null
-            //         ? Colors.green.shade50
-            //         : Colors.red.shade50,
-            //     child: Padding(
-            //       padding: const EdgeInsets.all(12),
-            //       child: Column(
-            //         crossAxisAlignment: CrossAxisAlignment.start,
-            //         children: [
-            //           Text(
-            //             'Complete Number: ${_phoneNumber!.completeNumber}',
-            //             style: const TextStyle(fontWeight: FontWeight.bold),
-            //           ),
-            //           const SizedBox(height: 4),
-            //           Text('Country: ${_phoneNumber!.country.name}'),
-            //           Text('Dial Code: +${_phoneNumber!.country.dialCode}'),
-            //           Text('Number: ${_phoneNumber!.number}'),
-            //           const SizedBox(height: 8),
-            //           Text(
-            //             _validationError ?? '✓ Valid',
-            //             style: TextStyle(
-            //               color: _validationError == null
-            //                   ? Colors.green
-            //                   : Colors.red,
-            //               fontWeight: FontWeight.bold,
-            //             ),
-            //           ),
-            //         ],
-            //       ),
-            //     ),
-            //   ),
-            // ],
+            // Show current value
+            if (_phoneNumber != null) ...[
+              const SizedBox(height: 8),
+              Card(
+                color: _validationError == null
+                    ? Colors.green.shade50
+                    : Colors.red.shade50,
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Complete Number: ${_phoneNumber!.completeNumber}',
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(height: 4),
+                      Text('Country: ${_phoneNumber!.country.name}'),
+                      Text('Dial Code: +${_phoneNumber!.country.dialCode}'),
+                      Text('Number: ${_phoneNumber!.number}'),
+                      const SizedBox(height: 8),
+                      Text(
+                        _validationError ?? '✓ Valid',
+                        style: TextStyle(
+                          color: _validationError == null
+                              ? Colors.green
+                              : Colors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
 
-            // const SizedBox(height: 24),
+            const SizedBox(height: 24),
 
             // Demo 2: Somalia example
-            // _buildSection(
-            //   'Somalia (9 digits)',
-            //   CustomPhoneField(
-            //     config: const PhoneFieldConfig(
-            //       initialCountryCode: 'SO',
-            //       decoration: InputDecoration(
-            //         labelText: 'Somalia Phone',
-            //         border: OutlineInputBorder(),
-            //         helperText: 'Fixed to accept 9 digits',
-            //       ),
-            //     ),
-            //     onChanged: (phoneNumber) {
-            //       print('Somalia: ${phoneNumber.completeNumber}');
-            //     },
-            //   ),
-            // ),
+            _buildSection(
+              'Somalia (9 digits)',
+              CustomPhoneField(
+                config: const PhoneFieldConfig(
+                  initialCountryCode: 'SO',
+                  decoration: InputDecoration(
+                    labelText: 'Somalia Phone',
+                    border: OutlineInputBorder(),
+                    helperText: 'Fixed to accept 9 digits',
+                  ),
+                ),
+                onChanged: (phoneNumber) {
+                  debugPrint('Somalia: ${phoneNumber.completeNumber}');
+                },
+              ),
+            ),
 
-            // const SizedBox(height: 24),
+            const SizedBox(height: 24),
 
             // Demo 3: Preferred countries
-            // _buildSection(
-            //   'Preferred Countries',
-            //   CustomPhoneField(
-            //     config: const PhoneFieldConfig(
-            //       preferredCountries: ['US', 'IN', 'GB', 'SO'],
-            //       decoration: InputDecoration(
-            //         labelText: 'Phone with Preferred',
-            //         border: OutlineInputBorder(),
-            //         helperText: 'US, IN, GB, SO shown first',
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            _buildSection(
+              'Preferred Countries',
+              CustomPhoneField(
+                config: const PhoneFieldConfig(
+                  preferredCountries: ['US', 'IN', 'GB', 'SO'],
+                  decoration: InputDecoration(
+                    labelText: 'Phone with Preferred',
+                    border: OutlineInputBorder(),
+                    helperText: 'US, IN, GB, SO shown first',
+                  ),
+                ),
+              ),
+            ),
 
-            // const SizedBox(height: 24),
+            const SizedBox(height: 24),
 
             // Demo 4: Country filter
-            // _buildSection(
-            //   'Filtered Countries',
-            //   CustomPhoneField(
-            //     config: const PhoneFieldConfig(
-            //       countryCodes: ['US', 'CA', 'MX', 'GB', 'IN'],
-            //       decoration: InputDecoration(
-            //         labelText: 'Limited Countries',
-            //         border: OutlineInputBorder(),
-            //         helperText: 'Only US, CA, MX, GB, IN',
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            _buildSection(
+              'Filtered Countries',
+              CustomPhoneField(
+                config: const PhoneFieldConfig(
+                  countryCodes: ['US', 'CA', 'MX', 'GB', 'IN'],
+                  decoration: InputDecoration(
+                    labelText: 'Limited Countries',
+                    border: OutlineInputBorder(),
+                    helperText: 'Only US, CA, MX, GB, IN',
+                  ),
+                ),
+              ),
+            ),
 
-            // const SizedBox(height: 24),
+            const SizedBox(height: 24),
 
             // Demo 5: Custom styling
-            // _buildSection(
-            //   'Custom Styling',
-            //   CustomPhoneField(
-            //     config: PhoneFieldConfig(
-            //       initialCountryCode: 'IN',
-            //       decoration: InputDecoration(
-            //         labelText: 'Styled Phone Input',
-            //         border: OutlineInputBorder(
-            //           borderRadius: BorderRadius.circular(12),
-            //         ),
-            //         filled: true,
-            //         fillColor: Colors.blue.shade50,
-            //         prefixIconColor: Colors.blue,
-            //       ),
-            //       dialCodeTextStyle: const TextStyle(
-            //         fontSize: 16,
-            //         fontWeight: FontWeight.bold,
-            //         color: Colors.blue,
-            //       ),
-            //       cursorColor: Colors.blue,
-            //     ),
-            //   ),
-            // ),
-            // const SizedBox(height: 24),
+            _buildSection(
+              'Custom Styling',
+              CustomPhoneField(
+                config: PhoneFieldConfig(
+                  initialCountryCode: 'IN',
+                  decoration: InputDecoration(
+                    labelText: 'Styled Phone Input',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    filled: true,
+                    fillColor: Colors.blue.shade50,
+                    prefixIconColor: Colors.blue,
+                  ),
+                  dialCodeTextStyle: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                  cursorColor: Colors.blue,
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
 
             // Runtime override demonstration
-            // _buildSection(
-            //   'Runtime Operations',
-            //   Column(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: [
-            //       ElevatedButton.icon(
-            //         onPressed: () {
-            //           // Override a country at runtime
-            //           PhoneField.manager.upsertCountry(
-            //             const Country(
-            //               code: 'US',
-            //               dialCode: '1',
-            //               displayCC: '1',
-            //               flag: '🇺🇸',
-            //               fullCountryCode: '1',
-            //               minLength: 10,
-            //               maxLength: 11, // Changed from 10
-            //               name: 'United States (Modified)',
-            //             ),
-            //           );
-            //           ScaffoldMessenger.of(context).showSnackBar(
-            //             const SnackBar(
-            //               content: Text(
-            //                 'US country updated to allow 10-11 digits',
-            //               ),
-            //             ),
-            //           );
-            //         },
-            //         icon: const Icon(Icons.edit),
-            //         label: const Text('Override US Country'),
-            //       ),
-            //       const SizedBox(height: 8),
-            //       ElevatedButton.icon(
-            //         onPressed: () async {
-            //           await PhoneField.manager.reset();
-            //           ScaffoldMessenger.of(context).showSnackBar(
-            //             const SnackBar(
-            //               content: Text('Reset to default countries'),
-            //             ),
-            //           );
-            //         },
-            //         icon: const Icon(Icons.refresh),
-            //         label: const Text('Reset to Defaults'),
-            //       ),
-            //       const SizedBox(height: 8),
-            //       ElevatedButton.icon(
-            //         onPressed: () {
-            //           final countries = PhoneField.manager.countries;
-            //           showDialog(
-            //             context: context,
-            //             builder: (context) => AlertDialog(
-            //               title: const Text('Country Stats'),
-            //               content: Text(
-            //                 'Total countries: ${countries.length}\n'
-            //                 'Countries with 9 digits: ${countries.values.where((c) => c.minLength == 9 && c.maxLength == 9).length}\n'
-            //                 'Somalia config: min=${countries['SO']?.minLength}, max=${countries['SO']?.maxLength}',
-            //               ),
-            //               actions: [
-            //                 TextButton(
-            //                   onPressed: () => Navigator.pop(context),
-            //                   child: const Text('Close'),
-            //                 ),
-            //               ],
-            //             ),
-            //           );
-            //         },
-            //         icon: const Icon(Icons.info),
-            //         label: const Text('Show Country Stats'),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            _buildSection(
+              'Runtime Operations',
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      // Override a country at runtime
+                      PhoneField.manager.upsertCountry(
+                        const Country(
+                          code: 'US',
+                          dialCode: '1',
+                          displayCC: '1',
+                          flag: '🇺🇸',
+                          fullCountryCode: '1',
+                          minLength: 10,
+                          maxLength: 11, // Changed from 10
+                          name: 'United States (Modified)',
+                        ),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            'US country updated to allow 10-11 digits',
+                          ),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.edit),
+                    label: const Text('Override US Country'),
+                  ),
+                  const SizedBox(height: 8),
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      await PhoneField.manager.reset();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Reset to default countries'),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.refresh),
+                    label: const Text('Reset to Defaults'),
+                  ),
+                  const SizedBox(height: 8),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      final countries = PhoneField.manager.countries;
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text('Country Stats'),
+                          content: Text(
+                            'Total countries: ${countries.length}\n'
+                            'Countries with 9 digits: ${countries.values.where((c) => c.minLength == 9 && c.maxLength == 9).length}\n'
+                            'Somalia config: min=${countries['SO']?.minLength}, max=${countries['SO']?.maxLength}',
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: const Text('Close'),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.info),
+                    label: const Text('Show Country Stats'),
+                  ),
+                ],
+              ),
+            ),
 
             // const SizedBox(height: 24),
 
