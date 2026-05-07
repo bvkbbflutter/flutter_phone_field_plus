@@ -277,7 +277,8 @@ class _CustomPhoneFieldState extends State<CustomPhoneField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextField(
+        // TextField(
+        TextFormField(
           controller: _controller,
           focusNode: _focusNode,
           autofocus: widget.config.autofocus,
@@ -294,6 +295,7 @@ class _CustomPhoneFieldState extends State<CustomPhoneField> {
             FilteringTextInputFormatter.digitsOnly,
             LengthLimitingTextInputFormatter(_getMaxLength()),
           ],
+          validator: widget.validator,
           decoration: (widget.config.decoration ?? const InputDecoration())
               .copyWith(
                 prefixIcon: _buildCountrySelector(hasError),
@@ -304,7 +306,8 @@ class _CustomPhoneFieldState extends State<CustomPhoneField> {
           onChanged: (value) {
             _validateAndUpdate(value);
           },
-          onSubmitted: widget.onSubmit,
+          onFieldSubmitted: widget.onSubmit,
+          // onSubmitted: widget.onSubmit,
         ),
 
         // Success message
