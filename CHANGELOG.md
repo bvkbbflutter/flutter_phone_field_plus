@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.0.4
 
-* TODO: Describe initial release.
+* Fixed issue where error border was not displayed during form validation.
