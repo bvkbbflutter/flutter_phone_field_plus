@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.5
+* Fixed images not reflecting in pub.dev
+
 ## 1.0.4
 * Fixed validation error border display issue.
 * Improved validation UI behavior.
