@@ -1,3 +1,10 @@
+## Preview
+
+| Country Picker                             | Success Validation                  | Failed Validation                  |
+| ------------------------------------------ | ----------------------------------- | ---------------------------------- |
+| ![](assets/screenshots/country_picker.png) | ![](assets/screenshots/success.png) | ![](assets/screenshots/failed.png) |
+
+
 # flutter_phone_field_plus
 
 A highly customizable international phone number input field for Flutter applications.
