@@ -1,6 +1,6 @@
 name: flutter_phone_field_plus
 description: Flutter phone input field with country picker, international dialing codes, validation, and customizable UI. Lightweight, flexible, and easy to integrate.
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/bvkbbflutter/flutter_phone_field_plus.git
 
 environment:
