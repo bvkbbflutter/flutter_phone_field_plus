@@ -1,7 +1,6 @@
 ## Preview
 
-![](assets/screenshots/flutter_phone_field.png)
-
+![Flutter Phone Field](https://raw.githubusercontent.com/bvkbbflutter/flutter_phone_field_plus/main/assets/screenshots/flutter_phone_field.png)
 # flutter_phone_field_plus
 
 A highly customizable international phone number input field for Flutter applications.
