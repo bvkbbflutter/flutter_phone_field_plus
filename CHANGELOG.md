@@ -1,4 +1,7 @@
 # Changelog
+## 1.0.7
+* Optimized screenshots
+
 ## 1.0.6
 * Optimized screenshots
 
