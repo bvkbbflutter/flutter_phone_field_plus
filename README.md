@@ -1,8 +1,6 @@
 ## Preview
 
-| Country Picker                                                                                                                             | Success Validation                                                                                                                  | Failed Validation                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/bvkbbflutter/flutter_phone_field_plus/main/assets/screenshots/country_picker.png" width="250"> | <img src="https://raw.githubusercontent.com/bvkbbflutter/flutter_phone_field_plus/main/assets/screenshots/success.png" width="250"> | <img src="https://raw.githubusercontent.com/bvkbbflutter/flutter_phone_field_plus/main/assets/screenshots/failed.png" width="250"> |
+![](assets/screenshots/flutter_phone_field.png)
 
 # flutter_phone_field_plus
 
