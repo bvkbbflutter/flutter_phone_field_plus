@@ -1,4 +1,6 @@
 # Changelog
+## 1.0.6
+* Optimized screenshots
 
 ## 1.0.5
 * Fixed images not reflecting in pub.dev
